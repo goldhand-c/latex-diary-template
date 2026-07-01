@@ -1,0 +1,102 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thaitext}
+
+% Language settings
+
+\RequirePackage{fontspec}    % font support
+\RequirePackage{polyglossia} % language support
+
+\setmainlanguage{english}
+\setotherlanguage{thai}
+
+% \renewcommand{\familydefault}{\sfdefault} % make sans be default font
+
+
+% -------- Chinese / Japanese / Korean --------
+\usepackage[space]{xeCJK} % CJK
+\xeCJKsetup{CJKglue=\hspace{0pt}} % no extra space
+\usepackage{ruby} % Japanese ruby
+\renewcommand{\rubysize}{0.4}    % adjusts size of furigana
+\renewcommand{\rubysep}{-0.55ex} % vertical separation
+
+\usepackage{xpinyin} % Pinyin
+\xpinyinsetup{
+    ratio={0.4}, % Pinyin font size
+    vsep={12pt},  % vertical separation
+    font={\rmfamily}, % Pinyin font
+    % format={\small}, % format of pinyin
+    multiple={\color{red}}, % format multiple pronunciation
+    % footnote=false, % Pinyin on footnote
+}
+
+% CJK fonts
+\setCJKmainfont[Path=./fonts/Chinese/,Extension = .ttf,Scale = 1.1]{KaiTi}
+\setCJKsansfont[Path=./fonts/Chinese/,Extension = .ttf,Scale = 1.1]{KaiTi}
+\setCJKmonofont[Path=./fonts/Chinese/,Extension = .ttf,Scale = 1.1]{KaiTi}
+
+% SET COMPONENT FONTS FOR ENGLISH
+\renewcommand{\familydefault}{\sfdefault}
+\setsansfont{WimpyKid}[Path=./fonts/Latin/,Extension=.ttf,UprightFont=*,BoldFont=*Dialogue,ItalicFont=*,ItalicFeatures={FakeSlant=0.2}]
+
+
+% ------------------- THAI -------------------
+% DEFINE THE THAI FONT
+\newfontfamily{\thaifont}{THSarabunNew}[
+    Path = ./fonts/Thai/,
+    Script = Thai,
+    Scale = MatchLowercase,
+    Extension = .ttf,
+    UprightFont = *,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic,
+    BoldItalicFont = *-BoldItalic,
+]
+
+%% Set environment for Thai fonts
+\newenvironment{thailang}{\thaifont}{}
+
+\RequirePackage[Latin,Thai]{ucharclasses} % switch font
+
+%% When using Thai characters use thailang environment
+\setTransitionTo{Thai}{\begin{thailang}}
+        \setTransitionFrom{Thai}{\end{thailang}}
+%% \uccoff text \uccon to temporarily override this behavior
+
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+% \AtBeginEnvironment{thai}{\begin{spacing}{1.25}} % adjust thai spacing
+% \AtEndEnvironment{thai}{\end{spacing}}
+
+
+% -------- Thai alphabet & number --------
+\def\thalph#1{\expandafter\@thalph\csname c@#1\endcsname}
+\def\@thalph#1{%
+    \ifcase#1\or ก\or ข\or ค\or ง\or จ\or ฉ\or ช\or ซ\or
+        ฌ\or ญ\or ฎ\or ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or
+        บ\or ป\or ผ\or ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ฤ\or ล\or ฦ\or ว\or
+        ศ\or ษ\or ส\or ห\or ฬ\or อ\or ฮ\else\xpg@ill@value{#1}{@thaialph}\fi}
+
+\def\thainum#1{\expandafter\thainumber\csname c@#1\endcsname}
+\def\thainumber#1{%
+    \thaidigits{\number#1}%
+}
+\def\thaidigits#1{\expandafter\thdigits #1@ }
+\def\thdigits#1{%
+    \ifx @#1% then terminate
+    \else
+        \ifx0#1๐\else\ifx1#1๑\else\ifx2#1๒\else\ifx3#1๓\else\ifx4#1๔\else\ifx5#1๕\else\ifx6#1๖\else\ifx7#1๗\else\ifx8#1๘\else\ifx9#1๙\else#1\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+        \expandafter\thdigits
+    \fi
+}
+
+
+% -------- Thai LaTeX art --------
+\newcommand{\ลาเท็ก}[1][]{\tikz[#1,baseline=(A.base),every node/.append style={inner sep=0mm}]{
+        \path (0,0) node {ล}
+        ++(0.17, 0.08) node {\small า}
+        ++(0.15,-0.08) node {เ}
+        ++(0.2, -0.07) node {ท}
+        ++(0.19, 0.08) node {็}
+        ++(0.09,-0.01) node (A) {ก};
+    }}

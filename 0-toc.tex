@@ -1,0 +1,264 @@
+% !TEX root = main.tex
+%% PostItNote env. / \MiniPostIt[color]{text}
+%% Render = / tikz / tikzv2
+%% Pin = / Paperclip / Scotch / None
+%% PinColor, Color, Corner, Width, Height, Rotate
+%% ExtraRightMargin=l, Title={text}, FontTitle={font}
+%% StorePostIt=name to mark tikz node
+
+\begingroup
+
+\newgeometry{
+  top=6.95mm, bottom=7.5mm,
+  left=12mm, right=12mm,
+  includehead, includefoot,
+}
+\fancyfoot[C]{\hspace*{42mm}\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\def\monthfill{\xrfill[2pt]{0.75pt}[blue]\ }
+\def\monthcaption#1{#1 \monthfill \pageref{#1}\\[1.5mm]}
+
+\def\JANUARY{
+  % 1
+  \begin{flushleft}
+    \hspace*{0.4cm}
+    \begin{PostItNote}[Width=5.7cm,Render=tikz,Color=Goldenrod,PinColor=green,Rotate=-2]
+      \monthcaption{January}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    &    & 1  & 2  & 3  \\
+        4  & 5  & 6  & 7  & 8  & 9  & 10 \\
+        11 & 12 & 13 & 14 & 15 & 16 & 17 \\
+        18 & 19 & 20 & 21 & 22 & 23 & 24 \\
+        25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\FEBRUARY{
+  % 2
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Color=Dandelion,Pin=Scotch,Rotate=-1]
+      \monthcaption{February}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+        1  & 2  & 3  & 4  & 5  & 6  & 7  \\
+        8  & 9  & 10 & 11 & 12 & 13 & 14 \\
+        15 & 16 & 17 & 18 & 19 & 20 & 21 \\
+        22 & 23 & 24 & 25 & 26 & 27 & 28 \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.5cm}
+  \end{flushright}
+}
+\def\MARCH{
+  % 3
+  \begin{flushleft}
+    \hspace*{0.15cm}
+    \begin{PostItNote}[Width=5.7cm,Render=tikz,Color=Apricot,PinColor=green,Rotate=-3]
+      \monthcaption{March}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+        1  & 2  & 3  & 4  & 5  & 6  & 7  \\
+        8  & 9  & 10 & 11 & 12 & 13 & 14 \\
+        15 & 16 & 17 & 18 & 19 & 20 & 21 \\
+        22 & 23 & 24 & 25 & 26 & 27 & 28 \\
+        29 & 30 & 31                     \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\APRIL{
+  % 4
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Pin=Scotch,Color=Peach,Rotate=4]
+      \monthcaption{April}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    & 1  & 2  & 3  & 4  \\
+        5  & 6  & 7  & 8  & 9  & 10 & 11 \\
+        12 & 13 & 14 & 15 & 16 & 17 & 18 \\
+        19 & 20 & 21 & 22 & 23 & 24 & 25 \\
+        26 & 27 & 28 & 29 & 30           \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.7cm}
+  \end{flushright}
+}
+\def\MAY{
+  % 5
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Color=Melon,Rotate=2]
+      \monthcaption{May}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    &    &    & 1  & 2  \\
+        3  & 4  & 5  & 6  & 7  & 8  & 9  \\
+        10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+        17 & 18 & 19 & 20 & 21 & 22 & 23 \\
+        24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+        31                               \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.18cm}
+  \end{flushright}
+}
+\def\JUNE{
+  % 6
+  \begin{flushleft}
+    \hspace*{0.3cm}
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Lavender,PinColor=violet,Rotate=-3]
+      \monthcaption{June}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           & 1  & 2  & 3  & 4  & 5  & 6  \\
+        7  & 8  & 9  & 10 & 11 & 12 & 13 \\
+        14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+        21 & 22 & 23 & 24 & 25 & 26 & 27 \\
+        28 & 29 & 30                     \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\JULY{
+  % 7
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Color=Thistle,Rotate=-2]
+      \monthcaption{July}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    & 1  & 2  & 3  & 4  \\
+        5  & 6  & 7  & 8  & 9  & 10 & 11 \\
+        12 & 13 & 14 & 15 & 16 & 17 & 18 \\
+        19 & 20 & 21 & 22 & 23 & 24 & 25 \\
+        26 & 27 & 28 & 29 & 30 & 31      \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.18cm}
+  \end{flushright}
+}
+\def\AUGUST{
+  % 8
+  \begin{flushleft}
+    \hspace*{0.65cm}
+    \colorlet{PeriwinkleLight}{Periwinkle!90}
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=PeriwinkleLight,PinColor=violet,Rotate=4]
+      \monthcaption{August}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    &    &    &    & 1  \\
+        2  & 3  & 4  & 5  & 6  & 7  & 8  \\
+        9  & 10 & 11 & 12 & 13 & 14 & 15 \\
+        16 & 17 & 18 & 19 & 20 & 21 & 22 \\
+        23 & 24 & 25 & 26 & 27 & 28 & 29 \\
+        30 & 31                          \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\SEPTEMBER{
+  % 9
+  \begin{flushleft}
+    \hspace*{0.25cm}
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=CornflowerBlue,PinColor=violet,Rotate=-3]
+      \monthcaption{September}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    & 1  & 2  & 3  & 4  & 5  \\
+        6  & 7  & 8  & 9  & 10 & 11 & 12 \\
+        13 & 14 & 15 & 16 & 17 & 18 & 19 \\
+        20 & 21 & 22 & 23 & 24 & 25 & 26 \\
+        27 & 28 & 29 & 30                \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\OCTOBER{
+  % 10
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Color=ProcessBlue,Rotate=2]
+      \monthcaption{October}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    &    &    & 1  & 2  & 3  \\
+        4  & 5  & 6  & 7  & 8  & 9  & 10 \\
+        11 & 12 & 13 & 14 & 15 & 16 & 17 \\
+        18 & 19 & 20 & 21 & 22 & 23 & 24 \\
+        25 & 26 & 27 & 28 & 29 & 30 & 31 \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.2cm}
+  \end{flushright}
+}
+\def\NOVEMBER{
+  % 11
+  \begin{flushleft}
+    \hspace*{0.05cm}
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Turquoise,PinColor=violet,Rotate=-2]
+      \monthcaption{November}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+        1  & 2  & 3  & 4  & 5  & 6  & 7  \\
+        8  & 9  & 10 & 11 & 12 & 13 & 14 \\
+        15 & 16 & 17 & 18 & 19 & 20 & 21 \\
+        22 & 23 & 24 & 25 & 26 & 27 & 28 \\
+        29 & 30                          \\
+      \end{tabular}
+    \end{PostItNote}
+  \end{flushleft}
+}
+\def\DECEMBER{
+  % 12
+  \begin{flushright}
+    \begin{PostItNote}[Width=5.7cm,Color=YellowGreen,Rotate=5]
+      \monthcaption{December}
+      \fontsize{7}{7}\selectfont
+      \bfseries
+      \begin{tabular}{@{}*7r@{}}
+           &    & 1  & 2  & 3  & 4  & 5  \\
+        6  & 7  & 8  & 9  & 10 & 11 & 12 \\
+        13 & 14 & 15 & 16 & 17 & 18 & 19 \\
+        20 & 21 & 22 & 23 & 24 & 25 & 26 \\
+        27 & 28 & 29 & 30 & 31           \\
+      \end{tabular}
+    \end{PostItNote}
+    \hspace*{0.2cm}
+  \end{flushright}
+}
+
+\vspace*{0.1mm}
+\JANUARY   \vspace{-7.5em}
+\FEBRUARY  \vspace{2.5em}
+\JULY      \vspace{-10em}
+\AUGUST    \vspace{1.6em}
+\SEPTEMBER \vspace{-8.8em}
+\OCTOBER
+\vspace*{4mm}
+
+\pagebreak
+% -------------------------------------------------
+
+\vspace*{0.5em}
+\MARCH    \vspace{-8.75em}
+\APRIL    \vspace{2em}
+\MAY      \vspace{-9.7em}
+\JUNE     \vspace{2.2em}
+\NOVEMBER \vspace{-8.6em}
+\DECEMBER
+
+\restoregeometry
+
+\endgroup

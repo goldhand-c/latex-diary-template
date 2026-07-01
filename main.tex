@@ -1,0 +1,57 @@
+% !TEX program = xelatex
+\documentclass[12pt,final]{article} % font size, twoside, draft-final, use extarticle for 8-20pt
+\usepackage[
+  % a4paper,   % paper size
+  paperwidth=16.5cm, paperheight=22cm,
+  top=6.95mm,   bottom=11mm,  % margin
+  left=33mm, right=12mm,
+  includehead, includefoot, % space header
+  % inner=2cm, % outer=5cm, % twoside margin
+  marginparwidth=22mm, % sidenote
+  marginparsep=3.2mm,    % gap
+  % showframe, % show page structure
+]{geometry}
+
+% Forces sidenotes to the left side
+\reversemarginpar
+
+\usepackage{silence}
+\WarningsOff* % From this point on, don't show me any warnings.
+\tracinglostchars=0 % suppress warning for missing characters
+
+
+% -------- LOCAL PACKAGES --------
+\makeatletter \def\input@path{{styles/}} \makeatother  % local package directory
+
+% Use settings in this order to avoid crash
+\usepackage{setuptext, thaitext, setcommand}
+
+
+% -------- TITLE --------
+\title{Diary 2026}
+\author{Kaka Cring}
+\date{\today}
+
+
+% -------- HEADER/FOOTER --------
+\fancyfoot[C]{\thepage}
+
+
+% ------------------- Document ------------------ %
+\includeonly{0-file, 0-toc, 3-march} 
+\begin{document}
+
+{\pagenumbering{gobble} \maketitle \clearpage}
+\pagenumbering{arabic}
+\enableNotebook
+\include{0-file}
+\include{0-toc}
+\include{3-march}
+% \include{4-april}
+% \include{5-may}
+% \include{6-june}
+% \include{7-july}
+
+\end{document}
+
+% -------- Template by Kaka 31/1/2026 :D -------- %

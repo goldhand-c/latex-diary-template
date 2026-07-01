@@ -1,0 +1,94 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{setcommand}
+
+% This is for defining custom control sequences
+
+% -------- OLD STYLE NUM --------
+% Use \oldstynum for counter
+% Use \oldnumber for manual input
+\def\oldstynum#1{\expandafter\oldnumber\csname c@#1\endcsname}
+\def\oldnumber#1{%
+    \olddigits{\number#1}%
+}
+\def\olddigits#1{\expandafter\oldigits #1@ }
+\def\oldigits#1{%
+    \ifx @#1% olen terminate
+    \else
+        \ifx0#1\scalebox{0.95}[0.85]0\else%
+            \ifx1#1\scalebox{0.95}[0.85]1\else%
+                \ifx2#1\scalebox{0.95}[0.85]2\else%
+                    \ifx3#1\raisebox{-0.4ex}{3}\else%
+                        \ifx4#1\raisebox{-0.4ex}{4}\else%
+                            \ifx5#1\raisebox{-0.4ex}{5}\else%
+                                \ifx6#1{6}\else%
+                                    \ifx7#1\raisebox{-0.4ex}{7}\else%
+                                        \ifx8#1{8}\else%
+                                            \ifx9#1\raisebox{-0.4ex}{9}\else%
+                                                #1\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+        \expandafter\oldigits
+    \fi
+}
+
+\renewcommand{\thepage}{\oldstynum{page}}
+% \renewcommand{\thesection}{\oldstynum{section}\!\!}
+% \renewcommand{\thesubsection}{\thesection\hspace{-0.6pt}.\oldstynum{subsection}\!\!}
+
+
+% -------- TIME --------
+\newcommand{\mytime}{%
+    \count255=\time
+    \divide\count255 by 60
+    \the\count255.% Hour
+    \count255=\time
+    \count254=\count255
+    \divide\count254 by 60
+    \multiply\count254 by 60
+    \advance\count255 by -\count254
+    \ifnum\count255<10 0\fi\the\count255% Minute (with leading zero)
+}
+
+\RequirePackage{pgfcalendar} % day utilities
+
+% Day note
+\def\dayof#1{\splitdate#1\relax}
+\def\splitdate#1/#2/#3\relax{
+    \newcount\dow%
+    \pgfcalendardatetojulian{#3-#2-#1}{\dow}%
+    \pgfcalendarjuliantoweekday{\dow}{\dow}%
+    \ifcase\dow  Monday\or  Tuesday\or  Wednesday\or  Thursday\or  Friday\or  Saturday\else  Sunday\fi
+}
+
+\newcommand{\pagetarget}[2]{%
+    \phantomsection%
+    \label{#1}%
+    \hypertarget{#1}{#2}%
+}
+
+\newcommand{\daynote}[2][]{%
+    \sidenote[\hspace*{-0.6em}]{%
+        \oldnumber{#2} \\ \dayof{#2} #1}%
+    \vadjust{\vspace{-2\notebooklineskip}}\par%
+}
+
+\newcommand{\monthnote}[1]{%
+    \sidenote[\hspace*{-1.3em}]{%
+        \nolinebreak%
+        \raisebox{0.5ex}{\MiniPostIt*[yellow]{\raisebox{-0.5ex}{\bfseries\ \pagetarget{#1}{#1}}}}}%
+    \vadjust{\vskip-1\baselineskip}%
+}
+
+\newcommand{\xdaynote}[1]{\phantom{}\hfill --- {\itshape #1}}
+
+
+% -------- FUN --------
+\RequirePackage{verse} % typesetting verse
+
+\RequirePackage{postit} % Note papers
+%% PostItNote env. / \MiniPostIt[color]{text}
+%% Render = / tikz / tikzv2
+%% Pin = / Paperclip / Scotch / None
+%% PinColor, Color, Corner, Width, Height, Rotate
+%% ExtraRightMargin=l, Title={text}, FontTitle={font}
+%% StorePostIt=name to mark tikz node
+
+\RequirePackage{xhfill} % line fill

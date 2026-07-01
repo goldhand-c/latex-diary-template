@@ -1,0 +1,170 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{setuptext}
+
+% -------- SPACING --------
+\raggedbottom % no vertical justification
+\RequirePackage{calc} % setcounter / setlength / widthof
+\RequirePackage{indentfirst} % force indent
+% (must use before polyglossia/ragged2e)
+
+\RequirePackage[normalem]{ulem} % uline uuline uwave sout xout dashuline dotuline
+% \RequirePackage{censor} % censor censorbox blackout
+% \StopCensoring % turn off censor
+
+\RequirePackage{setspace} % begin spacing 1.5
+\setstretch{1.618}         % line spacing
+% \onehalfspacing              % single/onehalf/double spacing
+% \setlength\headheight{62pt}  % header height
+\setlength\footskip{40pt}    % space before base of footer
+\setlength\parskip{\baselineskip} % paragraph spacing
+\setlength\parindent{0.75cm} % indent length
+% \setlength\hoffset{60pt} % left side page area spacing
+% \setlength\textheight{9.19in} % text-area height
+% \setlength\textwidth{426pt}   % text-area width
+
+% \spaceskip=\fontdimen2\font plus 0.75em minus 0pt % length of white space
+% % \spaceskip=\fontdimen2\font plus \fontdimen3\font minus 0pt % recommended
+% \tolerance=2000 % badness per line (default 200)
+% \emergencystretch=2em % use settings with sans serif font
+
+
+% -------- PAGE --------
+\RequirePackage{lipsum, ragged2e} % minipage / raggedright
+
+\RequirePackage{multicol} % page columns \begin{multicols*}{2} \columnbreak
+% \setlength{\columnsep}{12pt}      % distance between columns
+% \setlength{\columnseprule}{0.6pt} % thickness of vertical rule
+
+\RequirePackage{fancyhdr}   % header
+\pagestyle{fancy}           % activate header
+% \fancyhfoffset[L,R]{1cm}  % expend outside text area
+\renewcommand{\headrulewidth}{0pt} % width of header line
+% \renewcommand{\footrulewidth}{0.5pt} % width of footer line
+% \renewcommand{\headrule}{{\color{black!80}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}} % color
+
+\RequirePackage{titling}    % call title author date
+
+\RequirePackage{pdfpages} % \includepdf[pages=-]{All.pdf}
+
+% \RequirePackage{tramlines} % inter alia lines
+% \RequirePackage{framed}   % box around things with separated page
+% \RequirePackage{tcolorbox} % colored box for examples and theorems
+
+
+% -------- FONTS --------
+\RequirePackage{pifont} % Japanese emoji with item
+% \ding{37} \ding{38} \dingline{40}
+% \begin{dinglist}{48} \begin{dingautolist}{192}
+% http://xyoshiki.web.fc2.com/tex/zapfdingbats.html
+
+
+% -------- GRAPHICS --------
+\RequirePackage{graphicx, float} % Insert pictures
+\RequirePackage{amsmath}
+
+
+% -------- COLOR --------
+\RequirePackage[dvipsnames]{xcolor}
+\color{blue!10!black}
+
+
+% -------- REFERENCE --------
+\RequirePackage[hidelinks]{hyperref} % link
+\hypersetup{
+  %    colorlinks=true,   % text coloring instead of boxes
+  %    linkcolor=blue,    % internal links
+  %    urlcolor=cyan,     % web addresses \url
+  %    filecolor=magenta, % local files
+  %    citecolor=green,   % bibliographical citations
+  hidelinks          % removes all format
+}
+% \RequirePackage{lastpage} % ref last page number
+
+\RequirePackage{sidenotes} % add sidenote
+
+
+% -------- LIST --------
+\RequirePackage{enumitem} % enum label
+
+% Thai number list
+\AddEnumerateCounter{\thainum}{\thainum}{๑๒}
+\AddEnumerateCounter{\thalph}{\thalph}{ก}
+\newlist{thaienum}{enumerate}{3}
+\newlist{thaienumalph}{enumerate}{2}
+
+\setlist[thaienum,1]{label=\thainum*\!\!.,itemsep=-2pt,align=left,leftmargin=*,itemindent=0pt,widest=๑๐.,topsep=-10pt}
+\setlist[thaienum,2]{label=\thethaienumi\thainum*\!\!,itemsep=-2pt,align=left,leftmargin=*,itemindent=!,labelindent=*,labelwidth=*,widest=๑๐.๑,topsep=-4pt}
+\setlist[thaienumalph,1]{label=\thalph*.,itemsep=-2pt,align=left,leftmargin=*,itemindent=!,labelwidth=1em,topsep=-10pt}
+
+
+% -------- LIST --------
+\RequirePackage{hhline, colortbl} % table border
+\RequirePackage[export]{adjustbox} % \begin{adjustbox}{width=\columnwidth,center} for scaling tabular
+% export allows valign=c option in \includegraphics inside tabular
+
+\RequirePackage{array} % define column type C,L,R{<len>}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\newcommand{\itemcolor}[1]{ % switch label color
+  \renewcommand{\makelabel}[1]{\color{#1}\hfil ##1}
+}
+
+
+% -------- BACKGROUND --------
+\RequirePackage{background}
+
+\backgroundsetup{contents={}} % draft watermark (empty to disable)
+
+% % Setup the background lines
+% \backgroundsetup{
+%   scale=1,
+%   color=blue!20, % Light blue lines
+%   angle=0,
+%   opacity=1,
+%   contents={
+%     \begin{tikzpicture}[remember picture, overlay]
+%       \foreach \i in {0,1,...,37} {
+%         \draw (20mm-0.5\paperwidth,0.4\paperheight-34.7pt) ++(0,-\i*18.1pt) -- ++(170mm,0);
+%       }
+%     \end{tikzpicture}
+%   }
+% }
+
+% % --- STYLE 1: The Notebook (Lined) ---
+\newlength{\notebooklineskip}
+\setlength{\notebooklineskip}{\baselineskip}
+\newcommand{\enableNotebook}{
+  \backgroundsetup{ % 22 lines
+    scale=1, angle=0, opacity=1,
+    contents={
+        \begin{tikzpicture}[remember picture, overlay]
+          \draw[blue!35]   (current page.north west) ++(-5.71cm, 12*\notebooklineskip - 3.03cm) -- ++(\paperwidth,0);
+          \foreach \i in {-11,...,10} {
+              \draw[blue!20] (current page.north west) ++(-5.71cm,-\i*\notebooklineskip - 3.03cm) -- ++(\paperwidth,0);
+            }
+          \draw[blue!35]   (current page.north west) ++(-5.71cm,-11*\notebooklineskip - 3.03cm) -- ++(\paperwidth,0);
+          \draw[red!30, thick] (current page.north west) ++(-2.65cm,8.5cm) -- ++(0,-24cm);
+        \end{tikzpicture}
+      }
+  }
+}
+
+% % --- STYLE 2: The Grid (Math/Graph) ---
+% \newcommand{\enableGrid}{
+% \backgroundsetup{
+%   scale=1, angle=0, opacity=0.5,
+%   contents={
+%     \begin{tikzpicture}[remember picture, overlay]
+%       \draw[step=0.5cm, gray!20, thin,yshift=-0.12cm] (current page.north west) ++(-8cm,-17.5cm) grid ++(21cm,30cm);
+%     \end{tikzpicture}
+%   }
+% }
+% }
+
+% % --- STYLE 3: Blank ---
+\newcommand{\disableBackground}{
+  \backgroundsetup{contents={}}
+}

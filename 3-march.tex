@@ -1,0 +1,44 @@
+% !TEX root = main.tex
+% March
+
+\monthnote{March}
+
+\daynote{1/3/2026}
+This is the tutorial for this diary template.
+You must compile this file with \texttt{xelatex} twice.
+This file supports English, ภาษาไทย, and 汉字.
+You can edit fonts in \texttt{thaitext.sty}.
+The file \texttt{setuptext.sty} is for setting text spacing and page background.
+There are a few simple commands you can use to make note look nicer.
+You can check their definition from \texttt{setcommand.sty}.
+
+\daynote[\\ \texttt{\string\daynote}]{2/3/2026}
+\texttt{\string\daynote[note]\{dd/mm/yyyy\}} is used before each day entry to type the date in old-style format and the day of the week.
+You can insert an optional command to note after the weekday.
+
+\daynote[\\ \texttt{\string\monthnote}]{2/3/2026}
+\texttt{\string\monthnote\{Month\}} is used to type the new month header.
+It is typed with note paper background in \textbf{bold} font.
+It should be used at the start of a page.
+
+\daynote[\\ \texttt{\string\xdaynote}]{3/3/2026}
+\texttt{\string\xdaynote\{text\}} is used after each day to note extra message.
+It is typed in flush right alignment with \textit{italicized} font.
+It should be used in its own paragraph.
+
+\xdaynote{You can use this template now!}
+
+\monthnote{Example}
+
+\daynote{4/3/2026}
+\textbf{Lorem ipsum dolor sit amet}, consectetur adipiscing elit. Cras finibus nibh non tincidunt bibendum. Nullam posuere est sed sem convallis vehicula. Curabitur massa mauris, posuere vel suscipit in, placerat in dui.
+
+\daynote[\\ Lorem]{5/3/2026}
+Nullam fringilla feugiat nisi, vel facilisis tortor efficitur eget. Proin vehicula, urna et lacinia imperdiet, nunc nisl iaculis felis, nec consectetur dui augue quis turpis. Mauris in est quam. Suspendisse maximus lobortis sollicitudin.
+
+\xdaynote{Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...}
+
+\daynote{6/4/2026}
+Duis vulputate sapien quis massa commodo, at porttitor dui feugiat. Fusce scelerisque risus aliquam dolor tristique sodales. Nunc iaculis urna lectus. Ut sagittis, mauris vitae elementum scelerisque, eros mi pulvinar turpis, a accumsan nisl mauris a est. Nam elementum, enim quis finibus ornare, risus ipsum scelerisque lacus, sed ornare risus odio eu leo.
+
+\xdaynote{There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...}
