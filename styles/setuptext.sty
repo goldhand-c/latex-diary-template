@@ -8,24 +8,12 @@
 % (must use before polyglossia/ragged2e)
 
 \RequirePackage[normalem]{ulem} % uline uuline uwave sout xout dashuline dotuline
-% \RequirePackage{censor} % censor censorbox blackout
-% \StopCensoring % turn off censor
 
 \RequirePackage{setspace} % begin spacing 1.5
 \setstretch{1.618}         % line spacing
-% \onehalfspacing              % single/onehalf/double spacing
-% \setlength\headheight{62pt}  % header height
 \setlength\footskip{40pt}    % space before base of footer
 \setlength\parskip{\baselineskip} % paragraph spacing
 \setlength\parindent{0.75cm} % indent length
-% \setlength\hoffset{60pt} % left side page area spacing
-% \setlength\textheight{9.19in} % text-area height
-% \setlength\textwidth{426pt}   % text-area width
-
-% \spaceskip=\fontdimen2\font plus 0.75em minus 0pt % length of white space
-% % \spaceskip=\fontdimen2\font plus \fontdimen3\font minus 0pt % recommended
-% \tolerance=2000 % badness per line (default 200)
-% \emergencystretch=2em % use settings with sans serif font
 
 
 % -------- PAGE --------
@@ -45,10 +33,6 @@
 \RequirePackage{titling}    % call title author date
 
 \RequirePackage{pdfpages} % \includepdf[pages=-]{All.pdf}
-
-% \RequirePackage{tramlines} % inter alia lines
-% \RequirePackage{framed}   % box around things with separated page
-% \RequirePackage{tcolorbox} % colored box for examples and theorems
 
 
 % -------- FONTS --------
@@ -71,11 +55,6 @@
 % -------- REFERENCE --------
 \RequirePackage[hidelinks]{hyperref} % link
 \hypersetup{
-  %    colorlinks=true,   % text coloring instead of boxes
-  %    linkcolor=blue,    % internal links
-  %    urlcolor=cyan,     % web addresses \url
-  %    filecolor=magenta, % local files
-  %    citecolor=green,   % bibliographical citations
   hidelinks          % removes all format
 }
 % \RequirePackage{lastpage} % ref last page number
@@ -118,21 +97,6 @@
 
 \backgroundsetup{contents={}} % draft watermark (empty to disable)
 
-% % Setup the background lines
-% \backgroundsetup{
-%   scale=1,
-%   color=blue!20, % Light blue lines
-%   angle=0,
-%   opacity=1,
-%   contents={
-%     \begin{tikzpicture}[remember picture, overlay]
-%       \foreach \i in {0,1,...,37} {
-%         \draw (20mm-0.5\paperwidth,0.4\paperheight-34.7pt) ++(0,-\i*18.1pt) -- ++(170mm,0);
-%       }
-%     \end{tikzpicture}
-%   }
-% }
-
 % % --- STYLE 1: The Notebook (Lined) ---
 \newlength{\notebooklineskip}
 \setlength{\notebooklineskip}{\baselineskip}
@@ -151,18 +115,6 @@
       }
   }
 }
-
-% % --- STYLE 2: The Grid (Math/Graph) ---
-% \newcommand{\enableGrid}{
-% \backgroundsetup{
-%   scale=1, angle=0, opacity=0.5,
-%   contents={
-%     \begin{tikzpicture}[remember picture, overlay]
-%       \draw[step=0.5cm, gray!20, thin,yshift=-0.12cm] (current page.north west) ++(-8cm,-17.5cm) grid ++(21cm,30cm);
-%     \end{tikzpicture}
-%   }
-% }
-% }
 
 % % --- STYLE 3: Blank ---
 \newcommand{\disableBackground}{
