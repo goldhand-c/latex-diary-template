@@ -17,17 +17,15 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\def\monthfill{\xrfill[2pt]{0.75pt}[blue]\ }
+\def\monthfill{\xrfill[2pt]{0.75pt}[blue!70!black]\ }
 \def\monthcaption#1{#1 \monthfill \pageref{#1}\\[1.5mm]}
 
 \def\JANUARY{
-  % 1
   \begin{flushleft}
     \hspace*{0.4cm}
     \begin{PostItNote}[Width=5.7cm,Render=tikz,Color=Goldenrod,PinColor=green,Rotate=-2]
       \monthcaption{January}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    &    & 1  & 2  & 3  \\
         4  & 5  & 6  & 7  & 8  & 9  & 10 \\
@@ -39,12 +37,10 @@
   \end{flushleft}
 }
 \def\FEBRUARY{
-  % 2
   \begin{flushright}
     \begin{PostItNote}[Width=5.7cm,Color=Dandelion,Pin=Scotch,Rotate=-1]
       \monthcaption{February}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
         1  & 2  & 3  & 4  & 5  & 6  & 7  \\
         8  & 9  & 10 & 11 & 12 & 13 & 14 \\
@@ -56,13 +52,11 @@
   \end{flushright}
 }
 \def\MARCH{
-  % 3
   \begin{flushleft}
     \hspace*{0.15cm}
-    \begin{PostItNote}[Width=5.7cm,Render=tikz,Color=Apricot,PinColor=green,Rotate=-3]
+    \begin{PostItNote}[Width=5.7cm,Color=Apricot,PinColor=Orange,Rotate=-3]
       \monthcaption{March}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
         1  & 2  & 3  & 4  & 5  & 6  & 7  \\
         8  & 9  & 10 & 11 & 12 & 13 & 14 \\
@@ -74,12 +68,10 @@
   \end{flushleft}
 }
 \def\APRIL{
-  % 4
   \begin{flushright}
-    \begin{PostItNote}[Width=5.7cm,Pin=Scotch,Color=Peach,Rotate=4]
+    \begin{PostItNote}[Width=5.7cm,Render=tikz,Pin=Scotch,Color=Peach,Rotate=4]
       \monthcaption{April}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    & 1  & 2  & 3  & 4  \\
         5  & 6  & 7  & 8  & 9  & 10 & 11 \\
@@ -92,12 +84,10 @@
   \end{flushright}
 }
 \def\MAY{
-  % 5
   \begin{flushright}
-    \begin{PostItNote}[Width=5.7cm,Color=Melon,Rotate=2]
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Melon,Pin=None,Rotate=2]
       \monthcaption{May}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    &    &    & 1  & 2  \\
         3  & 4  & 5  & 6  & 7  & 8  & 9  \\
@@ -111,13 +101,11 @@
   \end{flushright}
 }
 \def\JUNE{
-  % 6
   \begin{flushleft}
     \hspace*{0.3cm}
-    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Lavender,PinColor=violet,Rotate=-3]
+    \begin{PostItNote}[Width=5.7cm,Color=Lavender,Pin=Scotch,Rotate=-3]
       \monthcaption{June}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            & 1  & 2  & 3  & 4  & 5  & 6  \\
         7  & 8  & 9  & 10 & 11 & 12 & 13 \\
@@ -129,12 +117,10 @@
   \end{flushleft}
 }
 \def\JULY{
-  % 7
   \begin{flushright}
-    \begin{PostItNote}[Width=5.7cm,Color=Thistle,Rotate=-2]
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Thistle,PinColor=Lavender,Rotate=-2]
       \monthcaption{July}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    & 1  & 2  & 3  & 4  \\
         5  & 6  & 7  & 8  & 9  & 10 & 11 \\
@@ -147,14 +133,12 @@
   \end{flushright}
 }
 \def\AUGUST{
-  % 8
   \begin{flushleft}
     \hspace*{0.65cm}
     \colorlet{PeriwinkleLight}{Periwinkle!90}
-    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=PeriwinkleLight,PinColor=violet,Rotate=4]
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=PeriwinkleLight,Pin=None,Rotate=4]
       \monthcaption{August}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    &    &    &    & 1  \\
         2  & 3  & 4  & 5  & 6  & 7  & 8  \\
@@ -167,13 +151,11 @@
   \end{flushleft}
 }
 \def\SEPTEMBER{
-  % 9
   \begin{flushleft}
     \hspace*{0.25cm}
-    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=CornflowerBlue,PinColor=violet,Rotate=-3]
+    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=CornflowerBlue,Pin=Scotch,Rotate=-3]
       \monthcaption{September}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    & 1  & 2  & 3  & 4  & 5  \\
         6  & 7  & 8  & 9  & 10 & 11 & 12 \\
@@ -185,12 +167,10 @@
   \end{flushleft}
 }
 \def\OCTOBER{
-  % 10
   \begin{flushright}
-    \begin{PostItNote}[Width=5.7cm,Color=ProcessBlue,Rotate=2]
+    \begin{PostItNote}[Width=5.7cm,Color=ProcessBlue,PinColor=TealBlue,Rotate=2]
       \monthcaption{October}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    &    &    & 1  & 2  & 3  \\
         4  & 5  & 6  & 7  & 8  & 9  & 10 \\
@@ -203,13 +183,12 @@
   \end{flushright}
 }
 \def\NOVEMBER{
-  % 11
   \begin{flushleft}
     \hspace*{0.05cm}
-    \begin{PostItNote}[Width=5.7cm,Render=tikzv2,Color=Turquoise,PinColor=violet,Rotate=-2]
+    \begin{PostItNote}[Width=5.7cm,Render=tikz,Color=Turquoise,Pin=Paperclip,PinColor=RubineRed,PinShift=0.65,ExtraRightMargin=0.15cm,Rotate=-2]
+      \vspace*{-10pt}\par
       \monthcaption{November}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
         1  & 2  & 3  & 4  & 5  & 6  & 7  \\
         8  & 9  & 10 & 11 & 12 & 13 & 14 \\
@@ -217,16 +196,15 @@
         22 & 23 & 24 & 25 & 26 & 27 & 28 \\
         29 & 30                          \\
       \end{tabular}
+      \vspace*{14pt}
     \end{PostItNote}
   \end{flushleft}
 }
 \def\DECEMBER{
-  % 12
   \begin{flushright}
-    \begin{PostItNote}[Width=5.7cm,Color=YellowGreen,Rotate=5]
+    \begin{PostItNote}[Width=5.7cm,Color=YellowGreen,PinColor=Yellow,Rotate=5]
       \monthcaption{December}
-      \fontsize{7}{7}\selectfont
-      \bfseries
+      \fontsize{7}{7}\selectfont \bfseries
       \begin{tabular}{@{}*7r@{}}
            &    & 1  & 2  & 3  & 4  & 5  \\
         6  & 7  & 8  & 9  & 10 & 11 & 12 \\
@@ -251,12 +229,12 @@
 \pagebreak
 % -------------------------------------------------
 
-\vspace*{0.5em}
+\vspace*{0.65em}
 \MARCH    \vspace{-8.75em}
 \APRIL    \vspace{2em}
 \MAY      \vspace{-9.7em}
-\JUNE     \vspace{2.2em}
-\NOVEMBER \vspace{-8.6em}
+\JUNE     \vspace{2.3em}
+\NOVEMBER \vspace{-8.7em}
 \DECEMBER
 
 \restoregeometry
