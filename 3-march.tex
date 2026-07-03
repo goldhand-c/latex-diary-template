@@ -12,17 +12,19 @@ The file \texttt{setuptext.sty} is for setting text spacing and page background.
 There are a few simple commands you can use to make note look nicer.
 You can check their definition from \texttt{setcommand.sty}.
 
+\newcommand\Arg[1]{$\langle\textit{#1}\,\rangle$}
+
 \daynote[\texttt{\string\monthnote}]{2/3/2026}
-\texttt{\string\monthnote\{Month\}} is used to type the new month header.
+\texttt{\string\monthnote\{\Arg{month}\}} is used to type the new month header.
 It is typed with note paper background in \textbf{bold} font.
 It should be used at the start of a page.
 
 \daynote[\texttt{\string\daynote}]{4/3/2026}
-\texttt{\string\daynote[text]\{dd/mm/yyyy\}} is used before each day entry to type the date in old-style format and the day of the week.
+\texttt{\string\daynote[\Arg{text}]\{\Arg{dd/mm/yyyy}\}} is used before each day entry to type the date in old-style format and the day of the week.
 You can insert an optional argument to note after the day of week.
 
 \daynote[\texttt{\string\xdaynote}]{8/3/2026}
-\texttt{\string\xdaynote\{text\}} is used after each day to note extra message.
+\texttt{\string\xdaynote\{\Arg{text}\}} is used after each day to note extra message.
 It is typed in flush right alignment with \textit{italicized} font.
 It should be used in its own paragraph.
 
