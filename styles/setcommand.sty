@@ -64,17 +64,20 @@
     \hypertarget{#1}{#2}%
 }
 
-\newcommand{\daynote}[2][]{%
-    \sidenote[\hspace*{-0.6em}]{%
-        \oldnumber{#2} \\ \dayof{#2} #1}%
-    \vadjust{\vspace{-2\notebooklineskip}}\par%
-}
-
 \newcommand{\monthnote}[1]{%
     \sidenote[\hspace*{-1.3em}]{%
         \nolinebreak%
         \raisebox{0.5ex}{\MiniPostIt*[yellow]{\raisebox{-0.5ex}{\bfseries\ \pagetarget{#1}{#1}}}}}%
     \vadjust{\vskip-1\baselineskip}%
+}
+
+\newcommand{\daynote}[2][]{%
+    \sidenote[\hspace*{-0.6em}]{%
+        \oldnumber{#2}\\%
+        \dayof{#2}%
+        \ifx\relax#1\relax\else\\#1\fi
+    }%
+    \vadjust{\vspace{-2\notebooklineskip}}\par%
 }
 
 \newcommand{\xdaynote}[1]{\phantom{}\hfill --- {\itshape #1}}
