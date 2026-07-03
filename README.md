@@ -1,5 +1,5 @@
 # $\mathup{\LaTeX}$ Diary Template
-Requires TeX distribution and `xelatex` compiler. \
+Requires TeX distribution and `xelatex` compiler \
 Supports English, Thai, and CJK
 
 ## Features
