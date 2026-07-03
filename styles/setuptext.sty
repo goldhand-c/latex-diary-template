@@ -62,36 +62,6 @@
 \RequirePackage{sidenotes} % add sidenote
 
 
-% -------- LIST --------
-\RequirePackage{enumitem} % enum label
-
-% Thai number list
-\AddEnumerateCounter{\thainum}{\thainum}{๑๒}
-\AddEnumerateCounter{\thalph}{\thalph}{ก}
-\newlist{thaienum}{enumerate}{3}
-\newlist{thaienumalph}{enumerate}{2}
-
-\setlist[thaienum,1]{label=\thainum*\!\!.,itemsep=-2pt,align=left,leftmargin=*,itemindent=0pt,widest=๑๐.,topsep=-10pt}
-\setlist[thaienum,2]{label=\thethaienumi\thainum*\!\!,itemsep=-2pt,align=left,leftmargin=*,itemindent=!,labelindent=*,labelwidth=*,widest=๑๐.๑,topsep=-4pt}
-\setlist[thaienumalph,1]{label=\thalph*.,itemsep=-2pt,align=left,leftmargin=*,itemindent=!,labelwidth=1em,topsep=-10pt}
-
-
-% -------- LIST --------
-\RequirePackage{hhline, colortbl} % table border
-\RequirePackage[export]{adjustbox} % \begin{adjustbox}{width=\columnwidth,center} for scaling tabular
-% export allows valign=c option in \includegraphics inside tabular
-
-\RequirePackage{array} % define column type C,L,R{<len>}
-\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
-\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
-\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
-\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
-
-\newcommand{\itemcolor}[1]{ % switch label color
-  \renewcommand{\makelabel}[1]{\color{#1}\hfil ##1}
-}
-
-
 % -------- BACKGROUND --------
 \RequirePackage{background}
 
